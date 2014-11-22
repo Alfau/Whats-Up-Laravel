@@ -18,10 +18,18 @@
 				</div>
 			</li>
 		@endforeach
+		
 		</ul>
 	</div>
+	{{ HTML::heading("Customer","Feedback") }}
 	<div id="customer_quote">
-		<p class="customer_quote">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"</p>
-		<p class="customer_name"></p>
+		<?php include("assets/icons/quote.svg") ?>
+		<div>
+		@foreach($quotes as $quotes)
+			<p class="quote_text">{{{ $quotes -> Text }}}</p>
+			<p class="quote_name">{{{ $quotes -> Name }}}</p>
+		@endforeach
+		</div>
+		<?php include("assets/icons/quote.svg") ?>
 	</div>
 @stop

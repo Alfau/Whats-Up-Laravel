@@ -11,4 +11,4 @@
 |
 */
 
-Route::get("/","SlideshowController@getSlides");
+Route::controller("/","HomeController");

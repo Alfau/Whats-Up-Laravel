@@ -1,5 +1,13 @@
 <?php
 
+HTML::macro("heading",function($regular,$bold){
+	return '<div class="heading_strip">
+			<div class="heading_wrapper">
+				<h3 class="heading">'.$regular.' <b>'.$bold.'</b></h3>
+			</div>
+		</div>';
+});
+
 /*
 |--------------------------------------------------------------------------
 | Register The Laravel Class Loader
