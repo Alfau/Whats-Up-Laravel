@@ -11,15 +11,27 @@ $(document).ready(function(){
 		}
 	});
 	
-	if(window.innerHeight>=984){
-		$(window).scroll(function(){
-			if($(window).scrollTop()>300){
-				$("header#small").slideDown(200);
-			}else if($(window).scrollTop()<=300){
-				$("header#small").slideUp("fast");
-			}
-		});
-	}
+	// if(window.innerWidth>=984){
+		// $(window).scroll(function(){
+			// if($(window).scrollTop()>300){
+				// $("header#small").slideDown(200);
+			// }else if($(window).scrollTop()<=300){
+				// $("header#small").slideUp("fast");
+			// }
+		// });
+	// }
+	
+	$(document).on("click","div#customer_quote #controls a",function(e){
+		var active=$("div#customer_quote .quote_container .active");
+		var active_id=$(this).attr("data-id");
+		
+		$(active).animate({"opacity":0},150).removeClass("active");
+		$("div#customer_quote div[data-id=" + active_id + "]").delay(200).animate({"opacity":1},150).addClass("active");
+		$("div#customer_quote #controls a.active").css({"background-color":"#bfc0c2"}).removeClass("active");
+		$("div#customer_quote #controls a[data-id=" + active_id + "]").css({"background-color":"#30bec1"}).addClass("active");
+		
+		e.preventDefault();
+	});
 	
 	slideshow(9000,700);
 });
@@ -56,4 +68,3 @@ function slideshow(interval,speed){
 		$("div#slideshow #controls a[data-id=" + active_id + "]").css({"background-color":"#30bec1"}).addClass("active");
 	}
 }
-;

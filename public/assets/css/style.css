@@ -132,7 +132,8 @@ h3 {
   background-color: #fff;
   box-shadow: 0 0 1px #c0c0c0;
   height: 30px;
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  clear: both; }
   .heading_strip svg {
     height: 15px;
     float: right; }
@@ -187,9 +188,6 @@ a:hover svg.social_icon path {
 */
 body {
   font-size: 0.875em; }
-
-header#small {
-  display: none; }
 
 header#large {
   position: relative;
@@ -256,10 +254,11 @@ div#slideshow {
   display: none; }
 
 div#featured_packages {
-  margin: 0 5.55555%; }
+  margin: 0 5.5555% 2em 5.5555%;
+  float: left; }
   div#featured_packages div.container {
     width: 100%;
-    padding: 0.5em; }
+    padding: 0 0.5em; }
     div#featured_packages div.container > div {
       background-color: #fff;
       box-shadow: 0 0 1px #c0c0c0;
@@ -296,38 +295,63 @@ div#featured_packages {
 
 div#customer_quote {
   position: relative;
-  box-shadow: 0 0 1px #c0c0c0;
-  width: 100%;
   height: 200px;
-  background-color: #fff; }
-  div#customer_quote > div {
+  margin: 0 5.5555%;
+  padding: 0 0.5em; }
+  div#customer_quote ul#controls {
+    z-index: 5;
     position: absolute;
-    top: 50%;
+    bottom: 1em;
     left: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    text-align: center; }
+    transform: translateX(-50%); }
+    div#customer_quote ul#controls li {
+      display: inline-block;
+      width: 10px; }
+    div#customer_quote ul#controls a {
+      height: 10px;
+      width: 10px;
+      background-color: #BFC0C2;
+      border-radius: 100px;
+      display: block;
+      transition: width 0.2s,height 0.2s,background-color 0.9s; }
+      div#customer_quote ul#controls a.active {
+        background-color: #30bec1; }
+      div#customer_quote ul#controls a:hover {
+        width: 12px;
+        height: 12px; }
+  div#customer_quote > div {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 1px #c0c0c0;
+    border-radius: 3px; }
+    div#customer_quote > div > div {
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center; }
+      div#customer_quote > div > div.active {
+        opacity: 1; }
   div#customer_quote .quote_text {
     color: #515151;
-    font-size: 1.2em; }
+    margin-bottom: 1em; }
   div#customer_quote .quote_name {
     color: #808285;
     font-style: italic; }
   div#customer_quote svg {
+    width: 65px;
     transition: width 0.3s; }
   div#customer_quote svg:first-child {
-    width: 100px;
-    margin-left: 5.555%;
-    padding-left: 0.5em; }
+    margin-left: 1em; }
   div#customer_quote svg:last-child {
-    width: 100px;
     position: absolute;
-    right: 5.555%;
+    right: 1.5em;
     bottom: 0;
-    padding-right: 0.5em;
     transform: rotate(180deg); }
   div#customer_quote:hover svg {
-    width: 110px; }
+    width: 75px; }
 
 /* @media screen and (min-width: 500px) */
 @media screen and (min-width: 31.25em) {
@@ -363,6 +387,7 @@ div#customer_quote {
     font-size: 1em; }
 
   header#large {
+    display: none;
     top: 0;
     height: 120px; }
     header#large li {
@@ -424,7 +449,6 @@ div#customer_quote {
           margin: 0; }
 
   header#small {
-    display: none;
     background-color: #fff;
     box-shadow: 0 0 2px #888;
     height: 60px;
@@ -433,7 +457,7 @@ div#customer_quote {
     top: 0;
     z-index: 10; }
     header#small a {
-      color: #a5a5a5;
+      color: #808285;
       font-size: 0.8em;
       transition: color 0.2s; }
       header#small a:hover {
@@ -477,6 +501,7 @@ div#customer_quote {
   div#slideshow {
     display: block;
     height: 400px;
+    margin-top: 60px;
     position: relative; }
     div#slideshow div.slide {
       background-repeat: no-repeat !important;
@@ -541,9 +566,6 @@ div#customer_quote {
           height: 12px; }
       div#slideshow ul#controls a.active {
         background-color: #30bec1; } }
-div#customer_quote {
-  height: 300px; }
-
 /* @media screen and (min-width: 1200px) */
 /* @media screen and (min-width: 1392px) */
 /* @media screen and (min-width: 1680px) */
