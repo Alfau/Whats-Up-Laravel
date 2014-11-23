@@ -462,6 +462,11 @@ div#customer_quote {
       transition: color 0.2s; }
       header#small a:hover {
         color: #30bec1; }
+      header#small a.book {
+        background-color: #30bec1;
+        color: #fff;
+        padding: 0.5em 1em;
+        border-radius: 3px; }
     header#small > a img {
       width: 13%;
       position: absolute;

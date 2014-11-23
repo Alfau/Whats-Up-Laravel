@@ -602,6 +602,12 @@ div#customer_quote{
       &:hover{
         color:$accent_color;
       }
+      &.book{
+        background-color:$accent_color;
+        color:#fff;
+        padding:0.5em 1em;
+        border-radius:3px;
+      }
     }
     &>a img{
       width:13%;

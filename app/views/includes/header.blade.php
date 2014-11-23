@@ -39,7 +39,11 @@
 				$mainNav=Header::wherePosition("1")->orderby("Order","ASC")->get();
 			?>
 			@foreach($mainNav as $nav)
-				<li><a href='{{{ URL::to($nav -> HREF) }}}'>{{{ $nav -> Name }}}</a></li>
+				@if($nav -> HREF == "/book")
+					<li><a href='{{{ URL::to($nav -> HREF) }}}' class="book">{{{ $nav -> Name }}}</a></li>
+				@else
+					<li><a href='{{{ URL::to($nav -> HREF) }}}'>{{{ $nav -> Name }}}</a></li>
+				@endif
 			@endforeach
 		</ul>
 	</nav>

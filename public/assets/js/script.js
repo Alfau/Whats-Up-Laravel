@@ -21,6 +21,44 @@ $(document).ready(function(){
 		// });
 	// }
 	
+	// $(document).on("click","header#small nav#left a",function(e){
+		// $.getJSON("/packages",function(data){
+			// console.log(data[0]);
+		// });
+// 		
+		// e.preventDefault();
+	// });
+	
+	$.getJSON("/packages",function(packagesJSON){
+		$.each(packagesJSON,function(key,value){
+			if(value.State == "Featured"){
+				$("div#featured_packages").append(
+					"<div class='container'>"
+					+	"<div>"
+					+		"<a href=#>"
+					+			"<div>"
+					+				"<img src='"+ value.Image +"'/>"
+					+				"<span class='emphasis_small'>From <b>USD "+ value.Price +"</b></span>"
+					+			"</div>"
+					+			"<div>"
+					+				"<span class='emphasis_large'>"+ value.Name +"</span>"
+					+				"<p class='summary'>"+ value.Overview +"</p>"
+					+			"</div>"
+					+		"</a>"
+					+		"<div>"
+					+		"<img src='assets/icons/duration.svg' height='15'/><span class='smallest'>"+ value.Duration +" days</span>"
+					+			"<div>"
+					+				"<a href=#><?php include('assets/icons/twitter.svg'); ?></a>"
+					+				"<a href=#><?php include('assets/icons/facebook.svg'); ?></a>"
+					+			"</div>"
+					+		"</div>"
+					+	"</div>"
+					+"</div>"
+				);
+			}
+		});
+	});
+	
 	$(document).on("click","div#customer_quote #controls a",function(e){
 		var active=$("div#customer_quote .quote_container .active");
 		var active_id=$(this).attr("data-id");
