@@ -23,7 +23,7 @@
 	
 	{{ HTML::heading("Featured","Packages") }}
 	<div id="featured_packages">
-		
+		<a href=# class="more">+</a>
 	</div>
 	
 	{{ HTML::heading("Customer","Feedback") }}

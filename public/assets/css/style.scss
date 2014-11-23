@@ -684,6 +684,7 @@ div#customer_quote{
       width:40%;
       text-align:center;
       font-size:2em;
+      transition:opacity 1s,font-size 1s;
       
       .emphasis_large{
         font-size:0.7em;
@@ -740,7 +741,9 @@ div#customer_quote{
     }
   }
 }
-
+div#customer_quote{
+  
+}
 /* @media screen and (min-width: 1200px) */
 // @media screen and (min-width: 75em) {
 // 

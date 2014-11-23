@@ -532,7 +532,8 @@ div#customer_quote {
       transform: translate(-50%, -50%);
       width: 40%;
       text-align: center;
-      font-size: 2em; }
+      font-size: 2em;
+      transition: opacity 1s,font-size 1s; }
       div#slideshow div.text .emphasis_large {
         font-size: 0.7em;
         color: #fff;
